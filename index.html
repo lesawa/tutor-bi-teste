@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tutor BI - Teste</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f7fb;
+    }
+
+    .chat-wrapper {
+      max-width: 900px;
+      margin: 0 auto;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      background: #ffffff;
+      border: 1px solid #d9e1ec;
+    }
+
+    .chat-header {
+      background: #0b1f3a;
+      color: white;
+      padding: 16px 20px;
+    }
+
+    .chat-header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .chat-header p {
+      margin: 6px 0 0;
+      font-size: 13px;
+      opacity: 0.9;
+    }
+
+    .chat-box {
+      flex: 1;
+      padding: 16px;
+      overflow-y: auto;
+      background: #f8fafc;
+    }
+
+    .message {
+      max-width: 75%;
+      padding: 12px 14px;
+      margin-bottom: 12px;
+      border-radius: 14px;
+      line-height: 1.4;
+      font-size: 15px;
+      white-space: pre-line;
+    }
+
+    .bot {
+      background: #e8eefc;
+      color: #1c2b4a;
+      border-top-left-radius: 4px;
+    }
+
+    .user {
+      background: #0b5ed7;
+      color: white;
+      margin-left: auto;
+      border-top-right-radius: 4px;
+    }
+
+    .chat-input {
+      display: flex;
+      gap: 10px;
+      padding: 14px;
+      border-top: 1px solid #d9e1ec;
+      background: #fff;
+    }
+
+    .chat-input input {
+      flex: 1;
+      padding: 12px;
+      border: 1px solid #c7d2e3;
+      border-radius: 10px;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .chat-input button {
+      padding: 12px 18px;
+      border: none;
+      background: #0b1f3a;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .quick-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding: 0 16px 12px;
+      background: #f8fafc;
+    }
+
+    .quick-buttons button {
+      border: 1px solid #c7d2e3;
+      background: white;
+      border-radius: 20px;
+      padding: 8px 12px;
+      cursor: pointer;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <div class="chat-wrapper">
+    <div class="chat-header">
+      <h1>Tutor BI - Ambiente de Teste</h1>
+      <p>Protótipo visual para validação de embed no Google Sites</p>
+    </div>
+
+    <div class="chat-box" id="chatBox">
+      <div class="message bot">
+        Olá! Sou o Tutor BI de teste.
+
+        Posso ajudar você a:
+        - começar um conteúdo
+        - revisar um tema
+        - praticar com perguntas
+
+        Escolha uma opção abaixo ou digite sua dúvida.
+      </div>
+    </div>
+
+    <div class="quick-buttons">
+      <button onclick="sendQuickMessage('Quero começar')">Quero começar</button>
+      <button onclick="sendQuickMessage('Quero revisar')">Quero revisar</button>
+      <button onclick="sendQuickMessage('Quero praticar')">Quero praticar</button>
+      <button onclick="sendQuickMessage('Me indique um vídeo')">Me indique um vídeo</button>
+    </div>
+
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Digite sua dúvida aqui..." />
+      <button onclick="sendMessage()">Enviar</button>
+    </div>
+  </div>
+
+  <script>
+    const chatBox = document.getElementById("chatBox");
+    const userInput = document.getElementById("userInput");
+
+    function addMessage(text, sender) {
+      const msg = document.createElement("div");
+      msg.className = `message ${sender}`;
+      msg.textContent = text;
+      chatBox.appendChild(msg);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    }
+
+    function fakeResponse(text) {
+      const msg = text.toLowerCase();
+
+      if (msg.includes("começar")) {
+        return "Ótimo. Para começar, sugiro iniciar pela Parte 00 e depois seguir para a introdução sobre tomada de decisão.\n\nMaterial sugerido:\n- Texto introdutório\n- Vídeo inicial da disciplina";
+      }
+
+      if (msg.includes("revisar")) {
+        return "Para revisão, recomendo retomar os conceitos principais e focar nos termos-chave.\n\nSugestão:\n- Resumo da Parte 01\n- Releitura dos conceitos centrais";
+      }
+
+      if (msg.includes("praticar")) {
+        return "Vamos praticar.\n\nPergunta de teste:\nQual é a principal diferença entre juros simples e juros compostos?";
+      }
+
+      if (msg.includes("vídeo")) {
+        return "Sugestão de vídeo:\n- Introdução ao tema da unidade\n- Aula sobre taxas de juros e aplicações";
+      }
+
+      return "Mensagem recebida com sucesso.\n\nEste é um chatbot de teste para validar a incorporação no Google Sites.\nNa próxima etapa, essa resposta poderá vir do Gemini com base nos materiais da disciplina.";
+    }
+
+    function sendMessage() {
+      const text = userInput.value.trim();
+      if (!text) return;
+
+      addMessage(text, "user");
+      userInput.value = "";
+
+      setTimeout(() => {
+        addMessage(fakeResponse(text), "bot");
+      }, 500);
+    }
+
+    function sendQuickMessage(text) {
+      addMessage(text, "user");
+
+      setTimeout(() => {
+        addMessage(fakeResponse(text), "bot");
+      }, 500);
+    }
+
+    userInput.addEventListener("keypress", function (event) {
+      if (event.key === "Enter") {
+        sendMessage();
+      }
+    });
+  </script>
+</body>
+</html>

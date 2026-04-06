@@ -1,0 +1,56 @@
+[
+  { "parte": "Parte 00", "titulo": "Introdução ao Business Intelligence", "tipo": "introducao", "ordem": 0 },
+  { "parte": "Parte 01", "titulo": "Processos de Tomada de Decisão", "tipo": "conteudo", "ordem": 1 },
+  { "parte": "Parte 02", "titulo": "Conceitos de Business Intelligence", "tipo": "conteudo", "ordem": 2 },
+  { "parte": "Parte 03", "titulo": "Big Data e Arquitetura Moderna de Dados", "tipo": "conteudo", "ordem": 3 },
+  { "parte": "Parte 04", "titulo": "Modelagem Dimensional", "tipo": "conteudo", "ordem": 4 },
+  { "parte": "Parte 05", "titulo": "Dimensões e Controle de Mudanças (SCD)", "tipo": "conteudo", "ordem": 5 },
+  { "parte": "Parte 06", "titulo": "Tabelas Fato e Métricas", "tipo": "conteudo", "ordem": 6 },
+
+  {
+    "parte": "Parte 07",
+    "titulo": "ETL e Integração de Dados",
+    "tipo": "conteudo",
+
+    "descricao": "Apresenta o processo de ETL (Extract, Transform, Load), fundamental para integração e preparação de dados em sistemas de Business Intelligence, incluindo suas etapas, qualidade de dados e integração de múltiplas fontes.",
+
+    "resumo": "Explora o processo de ETL, detalhando as etapas de extração, transformação e carga. Aborda a importância da qualidade, padronização e integração dos dados, além das diferenças entre ETL e ELT e o papel da integração de dados no contexto moderno.",
+
+    "temas": [
+      "ETL",
+      "Extração de dados",
+      "Transformação de dados",
+      "Carga de dados",
+      "Qualidade de dados",
+      "Integração de dados",
+      "ETL vs ELT",
+      "Ferramentas de ETL"
+    ],
+
+    "materiais": {
+      "apostila": {
+        "titulo": "Apostila – Parte 07",
+        "link": "https://docs.google.com/document/d/1GKZROuHEDX1hs1hn2omtvpcYY_qUa5U5iN2AQ0JpcjU/edit",
+        "descricao": "Material base que apresenta o processo de ETL, suas etapas e aplicações práticas."
+      },
+
+      "video_principal": {
+        "titulo": "ETL e Integração de Dados",
+        "link": "https://youtu.be/uaQ8QKzqke4",
+        "descricao": "Explica o processo de ETL e suas etapas no contexto de BI."
+      },
+
+      "videos_extras": [
+        {
+          "titulo": "ETL na prática com Pentaho",
+          "link": "https://youtu.be/luum7NikCm0",
+          "descricao": "Demonstra na prática a aplicação do ETL utilizando ferramenta de mercado."
+        }
+      ]
+    },
+
+    "exemplo_aplicacao": "Uma empresa integra dados de diferentes sistemas (ERP, CRM e vendas), realiza limpeza e padronização e carrega os dados em um Data Warehouse para análise estratégica.",
+
+    "ordem": 7
+  }
+]

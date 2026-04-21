@@ -146,65 +146,97 @@
     </div>
   </div>
 
-  <script>
+<script>
+  const API_KEY = "AIzaSyDIPsDTV-x8z6qz9bwTQPljUGrt-k5WLhc";
+
+  function addMessage(text, sender = "bot") {
     const chatBox = document.getElementById("chatBox");
-    const userInput = document.getElementById("userInput");
+    const msg = document.createElement("div");
+    msg.className = sender === "user" ? "message user" : "message bot";
+    msg.textContent = text;
+    chatBox.appendChild(msg);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
 
-    function addMessage(text, sender) {
-      const msg = document.createElement("div");
-      msg.className = `message ${sender}`;
-      msg.textContent = text;
-      chatBox.appendChild(msg);
-      chatBox.scrollTop = chatBox.scrollHeight;
-    }
+  async function callGemini(userMessage) {
+    const endpoint = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${API_KEY}`;
 
-    function fakeResponse(text) {
-      const msg = text.toLowerCase();
+    const prompt = `
+Você é um tutor de Business Intelligence.
+Responda em português do Brasil.
+Seja clara, didática e objetiva.
+Ajude o aluno a estudar.
+Quando fizer sentido, sugira começar, revisar ou praticar.
 
-      if (msg.includes("começar")) {
-        return "Ótimo. Para começar, sugiro iniciar pela Parte 00 e depois seguir para a introdução sobre tomada de decisão.\n\nMaterial sugerido:\n- Texto introdutório\n- Vídeo inicial da disciplina";
-      }
+Pergunta do aluno:
+${userMessage}
+    `;
 
-      if (msg.includes("revisar")) {
-        return "Para revisão, recomendo retomar os conceitos principais e focar nos termos-chave.\n\nSugestão:\n- Resumo da Parte 01\n- Releitura dos conceitos centrais";
-      }
+    const body = {
+      contents: [
+        {
+          parts: [
+            { text: prompt }
+          ]
+        }
+      ]
+    };
 
-      if (msg.includes("praticar")) {
-        return "Vamos praticar.\n\nPergunta de teste:\nQual é a principal diferença entre juros simples e juros compostos?";
-      }
-
-      if (msg.includes("vídeo")) {
-        return "Sugestão de vídeo:\n- Introdução ao tema da unidade\n- Aula sobre taxas de juros e aplicações";
-      }
-
-      return "Mensagem recebida com sucesso.\n\nEste é um chatbot de teste para validar a incorporação no Google Sites.\nNa próxima etapa, essa resposta poderá vir do Gemini com base nos materiais da disciplina.";
-    }
-
-    function sendMessage() {
-      const text = userInput.value.trim();
-      if (!text) return;
-
-      addMessage(text, "user");
-      userInput.value = "";
-
-      setTimeout(() => {
-        addMessage(fakeResponse(text), "bot");
-      }, 500);
-    }
-
-    function sendQuickMessage(text) {
-      addMessage(text, "user");
-
-      setTimeout(() => {
-        addMessage(fakeResponse(text), "bot");
-      }, 500);
-    }
-
-    userInput.addEventListener("keypress", function (event) {
-      if (event.key === "Enter") {
-        sendMessage();
-      }
+    const response = await fetch(endpoint, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(body)
     });
-  </script>
+
+    if (!response.ok) {
+      const errorText = await response.text();
+      throw new Error(`Erro da API: ${response.status} - ${errorText}`);
+    }
+
+    const data = await response.json();
+    return data.candidates?.[0]?.content?.parts?.[0]?.text || "Não consegui gerar uma resposta agora.";
+  }
+
+  async function sendMessage() {
+    const input = document.getElementById("userInput");
+    const message = input.value.trim();
+
+    if (!message) return;
+
+    addMessage(message, "user");
+    input.value = "";
+
+    addMessage("Pensando...", "bot");
+
+    try {
+      const chatBox = document.getElementById("chatBox");
+      const thinkingMsg = chatBox.lastElementChild;
+
+      const reply = await callGemini(message);
+
+      thinkingMsg.textContent = reply;
+    } catch (error) {
+      console.error(error);
+
+      const chatBox = document.getElementById("chatBox");
+      const thinkingMsg = chatBox.lastElementChild;
+
+      thinkingMsg.textContent = "Não consegui conectar com a IA agora.";
+    }
+  }
+
+  function sendQuickMessage(text) {
+    document.getElementById("userInput").value = text;
+    sendMessage();
+  }
+
+  document.getElementById("userInput").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+      sendMessage();
+    }
+  });
+</script>
 </body>
 </html>

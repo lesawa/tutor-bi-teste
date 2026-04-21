@@ -147,7 +147,7 @@
   </div>
 
 <script>
-  const API_KEY = "AIzaSyDIPsDTV-x8z6qz9bwTQPljUGrt-k5WLhc";
+  const API_KEY = "digite a senha";
 
   function addMessage(text, sender = "bot") {
     const chatBox = document.getElementById("chatBox");
@@ -192,6 +192,7 @@ ${userMessage}
 
     if (!response.ok) {
       const errorText = await response.text();
+      console.error("Resposta bruta da API:", errorText);
       throw new Error(`Erro da API: ${response.status} - ${errorText}`);
     }
 
@@ -218,12 +219,12 @@ ${userMessage}
 
       thinkingMsg.textContent = reply;
     } catch (error) {
-      console.error(error);
+  console.error("Erro completo:", error);
 
-      const chatBox = document.getElementById("chatBox");
-      const thinkingMsg = chatBox.lastElementChild;
+  const chatBox = document.getElementById("chatBox");
+  const thinkingMsg = chatBox.lastElementChild;
 
-      thinkingMsg.textContent = "Não consegui conectar com a IA agora.";
+  thinkingMsg.textContent = `Erro ao conectar com a IA: ${error.message}`;
     }
   }
 

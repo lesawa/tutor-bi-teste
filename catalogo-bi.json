@@ -1,0 +1,372 @@
+[
+  {
+    "parte": "Parte 00",
+    "titulo": "Introdução ao Business Intelligence",
+    "tipo": "introducao",
+    "descricao": "Apresenta a disciplina de Business Intelligence, seus objetivos e a visão completa do fluxo de um projeto de BI, conectando teoria, arquitetura analítica e prática.",
+    "resumo": "Introduz os fundamentos de Business Intelligence e sua relação com a tomada de decisão nas organizações. Mostra o percurso da disciplina, que combina fundamentos teóricos, modelagem dimensional, processos de ETL e visualização de dados com dashboards. Ao final desta parte, o aluno entende a proposta do curso e o ciclo básico de um projeto de BI, do problema de negócio até a geração de informação útil para decisão.",
+    "temas": [
+      "Business Intelligence",
+      "Tomada de decisão",
+      "Modelagem dimensional",
+      "ETL",
+      "Dashboards",
+      "Sistemas analíticos",
+      "Data Warehouse"
+    ],
+    "materiais": {
+      "apostila": {
+        "titulo": "Apostila – Parte 00",
+        "link": "https://docs.google.com/document/d/1ni78OJf2l_-HmwkGJcacuY8iwtoodz5gpHuO-IAkl2A/edit?usp=sharing",
+        "descricao": "Material base que apresenta a disciplina, planejamento de estudos e o fluxo completo de um projeto de BI."
+      },
+      "video_principal": {
+        "titulo": "Introdução ao BI – Parte 00",
+        "link": "https://youtu.be/xCZR2QsqDHU",
+        "descricao": "Apresenta a disciplina, a proposta do curso e o fluxo completo de um projeto de BI, do entendimento do problema até a criação de dashboards."
+      },
+      "videos_extras": [],
+      "textos_extras": [],
+      "notas": {
+        "titulo": "Notas/Transcrição – Parte 00",
+        "descricao": "Resumo e transcrição da aula introdutória, com os principais conceitos da disciplina e visão prática de aplicação de BI."
+      }
+    },
+    "exemplo_aplicacao": "Uma rede varejista quer reduzir ruptura de estoque. O time de BI entende o problema, modela dados de vendas e estoque, cria processos de ETL para consolidar informações de diferentes sistemas, carrega os dados em um modelo analítico e desenvolve dashboards para apoiar decisões de reposição e compras.",
+    "ordem": 0
+  },
+  {
+    "parte": "Parte 01",
+    "titulo": "Processos de Tomada de Decisão",
+    "tipo": "conteudo",
+    "descricao": "Apresenta o processo de tomada de decisão e sua importância no contexto de Business Intelligence, abordando as etapas do ciclo decisório, os níveis de decisão e a relação entre dados, informação e conhecimento.",
+    "resumo": "Explora os fundamentos da tomada de decisão nas organizações e como o Business Intelligence apoia esse processo. Aborda as etapas do ciclo decisório — inteligência, concepção, seleção e implementação — além dos níveis de decisão (operacional, tático e estratégico). Também apresenta a evolução de dados para informação, conhecimento e inteligência, e os níveis de maturidade analítica, que vão da análise descritiva à prescritiva.",
+    "temas": [
+      "Tomada de decisão",
+      "Ciclo decisório",
+      "Decisões estratégicas",
+      "Decisões táticas",
+      "Decisões operacionais",
+      "Dado, informação e conhecimento",
+      "Maturidade analítica",
+      "Análise descritiva, diagnóstica, preditiva e prescritiva"
+    ],
+    "materiais": {
+      "apostila": {
+        "titulo": "Apostila – Parte 01",
+        "link": "https://docs.google.com/document/d/1d32N2cXRXz-WES3NovlQBdspmVC86fCs0lR1Siq_Ou4/edit?usp=sharing",
+        "descricao": "Material base que apresenta os conceitos fundamentais da tomada de decisão e sua relação com Business Intelligence."
+      },
+      "video_principal": {
+        "titulo": "Processo de Tomada de Decisão",
+        "link": "https://youtu.be/NCbjAi226Bs",
+        "descricao": "Explica as etapas do ciclo decisório, os níveis de decisão e a importância dos dados no processo de tomada de decisão."
+      },
+      "videos_extras": [
+        {
+          "titulo": "Tomada de decisão na prática",
+          "link": "https://www.youtube.com/watch?v=e9fOD1pbvaM",
+          "descricao": "Apresenta exemplos práticos de tomada de decisão em contextos organizacionais."
+        }
+      ],
+      "textos_extras": [],
+      "notas": {
+        "titulo": "Notas/Transcrição – Parte 01",
+        "descricao": "Material de apoio com explicações detalhadas sobre o ciclo decisório, níveis de decisão e maturidade analítica."
+      }
+    },
+    "exemplo_aplicacao": "Uma empresa deseja lançar um novo site. Primeiro identifica o problema e coleta dados de navegação (inteligência). Em seguida, avalia alternativas de redesign (concepção), escolhe a melhor opção (seleção) e implementa um protótipo, acompanhando os resultados (implementação e avaliação).",
+    "ordem": 1
+  },
+  {
+    "parte": "Parte 02",
+    "titulo": "Conceitos de Business Intelligence",
+    "tipo": "conteudo",
+    "descricao": "Apresenta os conceitos fundamentais de Business Intelligence, seu contexto histórico e os principais componentes de uma arquitetura de BI, incluindo ETL, Data Warehouse, modelagem dimensional, Data Mart e OLAP x OLTP.",
+    "resumo": "Explora o Business Intelligence como uma abordagem estratégica para transformar dados em informações úteis para tomada de decisão. Aborda sua evolução histórica, a tríade formada por pessoas, metodologias e tecnologia e os principais componentes da arquitetura de BI, como ETL, Data Warehouse, modelagem dimensional e Data Mart. Também apresenta as diferenças entre OLTP e OLAP e suas aplicações no contexto analítico.",
+    "temas": [
+      "Business Intelligence",
+      "História do BI",
+      "Pessoas, metodologias e tecnologia",
+      "Arquitetura de BI",
+      "ETL",
+      "Data Warehouse",
+      "Modelagem dimensional",
+      "Data Mart",
+      "OLAP e OLTP",
+      "ROLAP e MOLAP"
+    ],
+    "materiais": {
+      "apostila": {
+        "titulo": "Apostila – Parte 02",
+        "link": "https://docs.google.com/document/d/1d32N2cXRXz-WES3NovlQBdspmVC86fCs0lR1Siq_Ou4/edit?usp=sharing",
+        "descricao": "Material base que apresenta os conceitos fundamentais de BI, sua evolução e os componentes da arquitetura analítica."
+      },
+      "video_principal": {
+        "titulo": "Conceitos de Business Intelligence",
+        "link": "https://youtu.be/XJx9BmtDDMY",
+        "descricao": "Explica os fundamentos de BI, sua evolução e os principais elementos da arquitetura analítica."
+      },
+      "videos_extras": [],
+      "textos_extras": [
+        {
+          "titulo": "Business Intelligence (TOTVS)",
+          "link": "https://www.totvs.com/blog/negocios/business-intelligence/",
+          "descricao": "Artigo com explicação prática sobre BI e suas aplicações no mercado."
+        }
+      ],
+      "podcast": {
+        "titulo": "Business Intelligence na prática",
+        "link": "https://open.spotify.com/episode/1T6X1ohOvFt4ClF5ucjQ8o",
+        "descricao": "Discussão sobre aplicações reais de BI nas organizações."
+      },
+      "notas": {
+        "titulo": "Notas/Transcrição – Parte 02",
+        "descricao": "Material detalhado sobre evolução do BI, arquitetura, ETL, Data Warehouse e modelagem dimensional."
+      }
+    },
+    "exemplo_aplicacao": "Uma empresa coleta dados de vendas, marketing e atendimento. Esses dados passam por um processo de ETL, são armazenados em um Data Warehouse e organizados em modelos dimensionais. Em seguida, dashboards analíticos são utilizados para identificar padrões, prever tendências e apoiar decisões estratégicas.",
+    "ordem": 2
+  },
+  {
+    "parte": "Parte 03",
+    "titulo": "Big Data e Arquitetura Moderna de Dados",
+    "tipo": "conteudo",
+    "descricao": "Apresenta os conceitos de Big Data e sua relação com o Business Intelligence no contexto atual, abordando as características dos dados e as arquiteturas modernas utilizadas para armazenamento e processamento em larga escala.",
+    "resumo": "Explora o conceito de Big Data a partir do crescimento exponencial de dados nas organizações, destacando as características principais como volume, velocidade e variedade. Apresenta arquiteturas modernas de dados, como Data Lake e Lambda Architecture, além de conceitos de processamento batch e streaming. Mostra como essas tecnologias permitem integrar, processar e analisar grandes volumes de dados, ampliando a capacidade analítica do Business Intelligence.",
+    "temas": [
+      "Big Data",
+      "Volume, velocidade e variedade",
+      "Arquitetura de dados moderna",
+      "Data Lake",
+      "Lambda Architecture",
+      "Processamento batch",
+      "Processamento streaming",
+      "Integração de dados em larga escala",
+      "BI no contexto de Big Data"
+    ],
+    "materiais": {
+      "apostila": {
+        "titulo": "Apostila – Parte 03",
+        "link": "https://docs.google.com/document/d/1fDSv_tttyqdDGccWfeuZ1mG9k4ko7M6AtTQIsr0F0hM/edit?usp=drive_link",
+        "descricao": "Material base que apresenta conceitos de Big Data, suas características e arquiteturas modernas de dados."
+      },
+      "video_principal": {
+        "titulo": "Big Data e BI no contexto atual",
+        "link": "https://youtu.be/luMneq-wdA4",
+        "descricao": "Explica o conceito de Big Data, suas características e sua relação com o Business Intelligence."
+      },
+      "videos_extras": [
+        {
+          "titulo": "Conceitos de Big Data",
+          "link": "https://youtu.be/V07Pk4de-5M",
+          "descricao": "Apresenta os conceitos fundamentais de Big Data e suas principais características."
+        },
+        {
+          "titulo": "Arquitetura de dados",
+          "link": "https://youtu.be/vbxLTMiNpec",
+          "descricao": "Explora as arquiteturas modernas de dados e sua aplicação em cenários de análise."
+        }
+      ],
+      "textos_extras": [],
+      "notas": {
+        "titulo": "Notas/Transcrição – Parte 03",
+        "descricao": "Material detalhado sobre Big Data, arquitetura moderna de dados e integração com Business Intelligence."
+      }
+    },
+    "exemplo_aplicacao": "Uma empresa coleta dados de vendas, redes sociais e sensores em tempo real. Esses dados são armazenados em um Data Lake, processados em lote e em streaming por meio de uma arquitetura Lambda, e utilizados para gerar análises rápidas e apoiar decisões estratégicas.",
+    "ordem": 3
+  },
+  {
+    "parte": "Parte 04",
+    "titulo": "Modelagem Dimensional",
+    "tipo": "conteudo",
+    "descricao": "Apresenta os conceitos de modelagem dimensional utilizados em projetos de Business Intelligence, abordando a organização dos dados em dimensões e fatos e as etapas para construção de modelos analíticos eficientes.",
+    "resumo": "Explora a modelagem dimensional como uma abordagem essencial para organizar dados em projetos de BI. Apresenta as principais etapas do processo, incluindo definição do processo de negócio, granularidade, identificação de dimensões e fatos. Mostra como essa estrutura permite análises mais intuitivas, melhora o desempenho das consultas e facilita a geração de insights a partir dos dados.",
+    "temas": [
+      "Modelagem dimensional",
+      "Processo de negócio",
+      "Granularidade",
+      "Dimensões",
+      "Fatos",
+      "Data Warehouse",
+      "Star Schema",
+      "Análise multidimensional"
+    ],
+    "materiais": {
+      "apostila": {
+        "titulo": "Apostila – Parte 04",
+        "link": "https://docs.google.com/document/d/1qEhMu5Te9dzXN68YDLrqpjvH_HZ_oovNC0bJLmUytFU/edit",
+        "descricao": "Material base que apresenta a modelagem dimensional e suas etapas para construção de modelos analíticos."
+      },
+      "video_principal": {
+        "titulo": "Modelagem Dimensional",
+        "link": "https://youtu.be/C6jse1OfKWc",
+        "descricao": "Explica como estruturar dados em dimensões e fatos e as etapas da modelagem dimensional."
+      },
+      "videos_extras": [
+        {
+          "titulo": "Dimensões e Fatos",
+          "link": "https://youtu.be/PFJ0ZG7wPTA",
+          "descricao": "Aprofunda o entendimento sobre dimensões e fatos no modelo dimensional."
+        },
+        {
+          "titulo": "Granularidade na Modelagem",
+          "link": "https://youtu.be/IArUNgCBg1Q",
+          "descricao": "Explica o conceito de granularidade e sua importância no nível de detalhe dos dados."
+        }
+      ],
+      "textos_extras": [],
+      "notas": {
+        "titulo": "Notas/Transcrição – Parte 04",
+        "descricao": "Material detalhado sobre as etapas da modelagem dimensional e organização de dados em dimensões e fatos."
+      }
+    },
+    "exemplo_aplicacao": "Uma empresa de varejo cria um modelo dimensional com uma tabela de fatos de vendas e dimensões como tempo, produto e loja. Isso permite analisar o desempenho das vendas sob diferentes perspectivas e apoiar decisões estratégicas.",
+    "ordem": 4
+  },
+  {
+    "parte": "Parte 05",
+    "titulo": "Dimensões e Controle de Mudanças (SCD)",
+    "tipo": "conteudo",
+    "descricao": "Aprofunda o conceito de dimensões na modelagem dimensional, abordando sua estrutura, atributos e o controle de mudanças ao longo do tempo, incluindo surrogate keys e os principais tipos de Slowly Changing Dimensions (SCD).",
+    "resumo": "Explora o papel das dimensões como responsáveis por fornecer contexto aos dados em modelos dimensionais. Apresenta a estrutura das tabelas de dimensão, incluindo atributos descritivos e chaves, e destaca a diferença entre surrogate keys e natural keys. Aborda o controle de mudanças lentas (SCD), explicando os principais tipos (0, 1, 2 e 3) e como cada estratégia trata alterações ao longo do tempo, permitindo manter ou não o histórico dos dados para análises analíticas.",
+    "temas": [
+      "Dimensões",
+      "Tabela de dimensão",
+      "Surrogate key",
+      "Natural key",
+      "Controle de mudanças (SCD)",
+      "SCD Tipo 0",
+      "SCD Tipo 1",
+      "SCD Tipo 2",
+      "SCD Tipo 3",
+      "Histórico de dados",
+      "Data Warehouse"
+    ],
+    "materiais": {
+      "apostila": {
+        "titulo": "Apostila – Parte 05",
+        "link": "https://docs.google.com/document/d/1jxx5kVyomoDaVZ0eXmXVUc5kpwwBCwp00cpNHd--uCg/edit",
+        "descricao": "Material base que apresenta dimensões, surrogate keys, natural keys e estratégias de controle de mudanças (SCD)."
+      },
+      "video_principal": {
+        "titulo": "Dimensões e Controle de Mudanças (SCD)",
+        "link": "https://youtu.be/l-UQ7B7sco0",
+        "descricao": "Explica o papel das dimensões, o uso de surrogate keys e os principais tipos de SCD."
+      },
+      "videos_extras": [
+        {
+          "titulo": "Introdução à modelagem dimensional (com SCD)",
+          "link": "https://youtu.be/reSeRkKg8y4",
+          "descricao": "Reforça conceitos de modelagem dimensional, incluindo surrogate keys e controle de mudanças."
+        }
+      ],
+      "textos_extras": [
+        {
+          "titulo": "O que é SCD no Data Warehouse (Canaltech)",
+          "link": "https://arquivo.canaltech.com.br/infra/O-que-significa-e-qual-a-importancia-do-SCD-no-Data-Warehouse/",
+          "descricao": "Explica o conceito de SCD e sua importância na manutenção do histórico de dados."
+        }
+      ],
+      "notas": {
+        "titulo": "Notas/Transcrição – Parte 05",
+        "descricao": "Material detalhado sobre dimensões, surrogate keys, natural keys e tipos de SCD."
+      }
+    },
+    "exemplo_aplicacao": "Uma empresa atualiza o endereço de um cliente. Utilizando SCD Tipo 2, um novo registro é criado na dimensão cliente, preservando o endereço antigo. Isso permite analisar o histórico de mudanças e entender o comportamento do cliente ao longo do tempo.",
+    "ordem": 5
+  },
+  {
+    "parte": "Parte 06",
+    "titulo": "Tabelas Fato e Métricas",
+    "tipo": "conteudo",
+    "descricao": "Apresenta o conceito de tabelas fato no modelo dimensional, abordando sua estrutura, tipos e o papel das métricas na análise de dados em Business Intelligence.",
+    "resumo": "Explora a tabela fato como elemento central do modelo dimensional, responsável por armazenar métricas relacionadas a eventos de negócio. Apresenta sua estrutura com chaves estrangeiras e medidas, além dos principais tipos de tabelas fato, como transacional, agregada, periódica e sem fato. Também aborda a classificação das métricas em aditivas, semi-aditivas e não aditivas, destacando sua importância para garantir análises corretas e evitar interpretações equivocadas.",
+    "temas": [
+      "Tabela fato",
+      "Métricas",
+      "Métricas aditivas",
+      "Métricas semi-aditivas",
+      "Métricas não aditivas",
+      "Fato transacional",
+      "Fato agregada",
+      "Fato periódica",
+      "Fato sem fato",
+      "Modelagem dimensional",
+      "Data Warehouse"
+    ],
+    "materiais": {
+      "apostila": {
+        "titulo": "Apostila – Parte 06",
+        "link": "https://docs.google.com/document/d/1Uw1OYbXYzhVqrMeCNT-vX0YjsgkVPTk4ov6uVDaHkWY/edit",
+        "descricao": "Material base que apresenta a estrutura das tabelas fato e os tipos de métricas utilizadas em modelos dimensionais."
+      },
+      "video_principal": {
+        "titulo": "Tabelas Fato e Métricas",
+        "link": "https://youtu.be/bILzKq-ZoGE",
+        "descricao": "Explica o conceito de tabela fato, tipos de fatos e classificação das métricas."
+      },
+      "videos_extras": [
+        {
+          "titulo": "Tipos de Métricas em BI",
+          "link": "https://youtu.be/luum7NikCm0",
+          "descricao": "Aprofunda os conceitos de métricas aditivas, semi-aditivas e não aditivas."
+        }
+      ],
+      "textos_extras": [],
+      "notas": {
+        "titulo": "Notas/Transcrição – Parte 06",
+        "descricao": "Material detalhado sobre estrutura das tabelas fato, tipos de fatos e classificação das métricas."
+      }
+    },
+    "exemplo_aplicacao": "Uma empresa possui uma tabela fato de vendas onde cada linha representa uma transação. Métricas como valor de vendas e quantidade são aditivas e podem ser somadas, enquanto a margem de lucro precisa de cálculo específico, pois não é aditiva. Isso garante análises corretas ao longo do tempo e entre diferentes dimensões.",
+    "ordem": 6
+  },
+  {
+    "parte": "Parte 07",
+    "titulo": "ETL e Integração de Dados",
+    "tipo": "conteudo",
+
+    "descricao": "Apresenta o processo de ETL (Extract, Transform, Load), fundamental para integração e preparação de dados em sistemas de Business Intelligence, incluindo suas etapas, qualidade de dados e integração de múltiplas fontes.",
+
+    "resumo": "Explora o processo de ETL, detalhando as etapas de extração, transformação e carga. Aborda a importância da qualidade, padronização e integração dos dados, além das diferenças entre ETL e ELT e o papel da integração de dados no contexto moderno.",
+
+    "temas": [
+      "ETL",
+      "Extração de dados",
+      "Transformação de dados",
+      "Carga de dados",
+      "Qualidade de dados",
+      "Integração de dados",
+      "ETL vs ELT",
+      "Ferramentas de ETL"
+    ],
+
+    "materiais": {
+      "apostila": {
+        "titulo": "Apostila – Parte 07",
+        "link": "https://docs.google.com/document/d/1GKZROuHEDX1hs1hn2omtvpcYY_qUa5U5iN2AQ0JpcjU/edit",
+        "descricao": "Material base que apresenta o processo de ETL, suas etapas e aplicações práticas."
+      },
+
+      "video_principal": {
+        "titulo": "ETL e Integração de Dados",
+        "link": "https://youtu.be/uaQ8QKzqke4",
+        "descricao": "Explica o processo de ETL e suas etapas no contexto de BI."
+      },
+
+      "videos_extras": [
+        {
+          "titulo": "ETL na prática com Pentaho",
+          "link": "https://youtu.be/luum7NikCm0",
+          "descricao": "Demonstra na prática a aplicação do ETL utilizando ferramenta de mercado."
+        }
+      ]
+    },
+
+    "exemplo_aplicacao": "Uma empresa integra dados de diferentes sistemas (ERP, CRM e vendas), realiza limpeza e padronização e carrega os dados em um Data Warehouse para análise estratégica.",
+
+    "ordem": 7
+  }
+]

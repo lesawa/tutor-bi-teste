@@ -83,7 +83,7 @@ app.post("/chat", async (req, res) => {
 
     Se o aluno pedir algo sobre estudar do zero, trate como objetivo "comecar".
     Se o aluno pedir resumo, revisão ou relembrar, trate como objetivo "revisar".
-    Se o aluno pedir perguntas, teste ou quiz, trate como objetivo "praticar".
+    Se o aluno pedir perguntas, teste ou quiz, explique que o tutor não gera atividades avaliativas e ofereça uma explicação aplicada do tema.
     Se o aluno pedir aula gravada, vídeo ou algo para assistir, trate como objetivo "video".
 
     Regra de tamanho:

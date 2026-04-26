@@ -77,7 +77,12 @@ Este projeto demonstra a aplicação prática de IA generativa na educação, co
 Como evolução futura, o sistema pode incorporar mecanismos de recuperação dinâmica de conteúdo (RAG) a partir de repositórios institucionais.
 
 ---
+## 🔗 Demonstração
 
-## 🔗 Repositório
+Frontend: (https://sites.google.com/d/1Yr-3pKiHs1X-wDjd6_gnld37pfD1IeMu/p/1J6UD8E4SPZY6UcrAeKF59VUC4RdN2krx/edit) 
+Backend: https://gem-tutor-backend-20855190353.us-central1.run.app
 
-(Coloque aqui o link do GitHub depois de subir)
+---
+## 🧠 Arquitetura
+
+Usuário → Interface Web → Cloud Run → Vertex AI → Resposta

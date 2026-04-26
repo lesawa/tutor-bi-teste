@@ -112,9 +112,23 @@ app.post("/chat", async (req, res) => {
     Regras por objetivo:
     - comecar: explique do zero, com visão geral e indique a melhor parte para iniciar
     - revisar: resuma os pontos principais e destaque os conceitos mais importantes
-    - praticar: gere 3 perguntas curtas para o aluno responder, baseadas no catálogo
+    - praticar: explique o tema de forma aplicada, com exemplos práticos do mundo real.
+    - não gere exercícios, testes ou questionários.
+    - se o aluno quiser praticar, oriente a revisar o material da disciplina.
     - video: indique primeiro o vídeo principal da parte mais adequada; use extra apenas se fizer sentido
     - normal: responda de forma didática e, se couber, recomende continuidade
+
+    Nunca crie atividades, exercícios, provas, questionários ou tarefas.
+
+    Seu papel é apenas:
+    - explicar conceitos
+    - dar exemplos práticos
+    - orientar o estudo dentro do material da disciplina
+    
+    Se o aluno pedir exercícios ou prática:
+    - responda com explicação aplicada
+    - sugira revisar o material da disciplina
+    - não crie novas perguntas
 
     Base da disciplina:
     ${JSON.stringify(catalogo, null, 2)}

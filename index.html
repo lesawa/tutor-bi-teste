@@ -133,8 +133,8 @@
         Olá! Sou o Tutor Inteligente de Business Intelligence.
 
         Posso ajudar você a entender conceitos, revisar conteúdos e localizar materiais de apoio da disciplina.
-        
-        Escolha uma opção abaixo ou digite sua dúvida.
+
+        Escolha uma opção abaixo para começar ou digite sua dúvida.
 
         <small>Aviso: este tutor é um apoio ao estudo. Consulte sempre os materiais oficiais da disciplina e a orientação docente.</small>
       </div>
@@ -155,7 +155,7 @@
 
 <script>
 
-  let ultimaPergunta = "";
+  let ultimaPerguntaDigitada = "";
 
   function addMessage(text, sender = "bot") {
     const chatBox = document.getElementById("chatBox");
@@ -207,9 +207,8 @@
       if (!text) return;
     }
 
-    ultimaPergunta = text;
-
     if (mostrarPergunta) {
+      ultimaPerguntaDigitada = text;
       addMessage(text, "user");
       input.value = "";
     }
@@ -233,13 +232,21 @@
   }
 
   function sendQuickMessage(objetivo) {
-      if (!ultimaPergunta) {
-        alert("Faça uma pergunta primeiro.");
-        return;
-      }
+  const mensagensIniciais = {
+    comecar: "Quero iniciar meus estudos em Business Intelligence.",
+    revisar: "Quero revisar o conteúdo de Business Intelligence.",
+    praticar: "Quero entender Business Intelligence na prática.",
+    video: "Quero ver um material de apoio sobre Business Intelligence."
+  };
 
-      sendMessage(ultimaPergunta, objetivo, false);
+    if (!ultimaPerguntaDigitada) {
+      const mensagemInicial = mensagensIniciais[objetivo] || "Quero estudar Business Intelligence.";
+      sendMessage(mensagemInicial, objetivo, true);
+      return;
     }
+
+    sendMessage(ultimaPerguntaDigitada, objetivo, false);
+  }
 
   document.getElementById("userInput").addEventListener("keypress", function(event) {
     if (event.key === "Enter") {

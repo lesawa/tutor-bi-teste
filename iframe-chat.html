@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<style>
+    html, body {
+        margin: 0;
+        padding: 0;
+        overflow: hidden !important;
+        font-family: Arial, sans-serif;
+    }
+
+    #chat-button {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        background-color: #0b1f3a;
+        color: white;
+        border: none;
+        font-size: 30px;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        z-index: 9999;
+    }
+
+    #chat-box {
+        position: fixed;
+        bottom: 95px;
+        right: 20px;
+        width: 400px;
+        height: 500px;
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        display: none;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        z-index: 9999;
+    }
+
+    #chat-header {
+        height: 55px;
+        background: #0b1f3a;;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 15px;
+        font-weight: bold;
+        margin: 0;
+    }
+
+    #close-btn {
+        cursor: pointer;
+        font-size: 22px;
+    }
+
+    iframe {
+    display: block;
+    width: 100%;
+    height: calc(100% - 55px);
+    border: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden !important;
+}
+
+    @media(max-width: 500px){
+        #chat-box{
+            width: 95%;
+            height: 80%;
+            right: 2.5%;
+            bottom: 90px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<button id="chat-button">💬</button>
+
+<div id="chat-box">
+    <div id="chat-header">
+        Assistente Virtual de Aprendizagem - Impacta
+        <span id="close-btn">×</span>
+    </div>
+
+    <iframe
+        src="https://lesawa.github.io/tcc-tutor-bi/">
+    </iframe>
+</div>
+
+<script>
+    const button = document.getElementById('chat-button');
+    const chatBox = document.getElementById('chat-box');
+    const closeBtn = document.getElementById('close-btn');
+
+    button.addEventListener('click', () => {
+        chatBox.style.display =
+            chatBox.style.display === 'block'
+            ? 'none'
+            : 'block';
+    });
+
+    closeBtn.addEventListener('click', () => {
+        chatBox.style.display = 'none';
+    });
+</script>
+
+</body>
+</html>

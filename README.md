@@ -1,88 +1,51 @@
-# Tutor Inteligente para Business Intelligence com IA Generativa
+# Tutor Inteligente de Business Intelligence com IA Generativa
 
-## 📌 Descrição
+Este repositório reúne os artefatos técnicos do Trabalho de Conclusão de Curso:
 
-Este projeto foi desenvolvido como Trabalho de Conclusão de Curso (TCC) com o objetivo de explorar o uso de Inteligência Artificial Generativa no apoio ao ensino a distância (EaD), aplicado à disciplina de Business Intelligence.
+**Aplicação da IA Generativa na Educação a Distância: Implementação de um Tutor Conversacional para Apoio ao Estudo de Business Intelligence**
 
-O sistema consiste em um tutor conversacional que orienta o aluno, responde dúvidas e recomenda conteúdos da disciplina de forma personalizada.
+O projeto consiste em um protótipo funcional de tutor conversacional educacional, desenvolvido para apoiar o estudo de uma disciplina de Business Intelligence em contexto de Educação a Distância (EaD).
 
----
-
-## 🎯 Objetivo
-
-Desenvolver um protótipo funcional de tutor educacional capaz de:
-
-- auxiliar o aluno no processo de aprendizagem
-- responder dúvidas com linguagem didática
-- sugerir conteúdos organizados por partes da disciplina
-- integrar IA generativa ao contexto educacional
+A solução foi implementada em ambiente acadêmico controlado, utilizando Google Sites como camada de acesso, GitHub Pages como hospedagem da interface web, Google Cloud Run como backend em nuvem e Vertex AI/Gemini como serviço de geração de respostas.
 
 ---
 
-## 🧠 Arquitetura do Sistema
+## 1. Objetivo do projeto
 
-O sistema segue a seguinte arquitetura:
+O objetivo do projeto foi propor, implementar e descrever um protótipo funcional de tutor conversacional com inteligência artificial generativa para apoio ao estudo de Business Intelligence.
 
-Usuário → Interface Web (HTML) → Backend (Node.js no Cloud Run) → Vertex AI (Gemini) → Resposta
+O tutor foi projetado para:
 
----
-
-## ⚙️ Tecnologias Utilizadas
-
-- Node.js
-- Express
-- Google Cloud Run
-- Vertex AI (Gemini)
-- HTML, CSS e JavaScript
+- responder dúvidas conceituais sobre a disciplina;
+- apoiar o estudante na revisão de conteúdos;
+- indicar materiais oficiais cadastrados no catálogo da disciplina;
+- orientar o aluno de forma didática e objetiva;
+- manter as respostas dentro do escopo dos conteúdos autorizados;
+- atuar como apoio ao estudo, sem substituir professor, materiais oficiais ou avaliações formais.
 
 ---
 
-## 🚀 Funcionamento
+## 2. Contexto acadêmico
 
-O usuário interage com o tutor por meio de uma interface web, podendo:
+O protótipo foi desenvolvido no contexto de um TCC do curso de Sistemas de Informação da Faculdade Impacta.
 
-- fazer perguntas livres
-- escolher objetivos de aprendizagem (começar, revisar, praticar, vídeo)
+A implementação foi realizada em ambiente controlado/sandbox, com apoio institucional para testes. A solução não foi aplicada com estudantes reais nesta etapa.
 
-O backend processa a solicitação e utiliza o modelo Gemini para gerar respostas com base em um catálogo estruturado da disciplina.
-
----
-
-## 📚 Base de Conhecimento
-
-O sistema utiliza um catálogo estruturado (`catalogo-bi.json`) contendo:
-
-- organização por partes da disciplina
-- temas abordados
-- materiais de apoio (apostilas e vídeos)
+Essa decisão foi adotada para evitar riscos de instabilidade técnica, exposição indevida de dados ou interferência em uma turma em produção.
 
 ---
 
-## 🔒 Acesso aos Materiais
+## 3. Arquitetura da solução
 
-Os materiais recomendados podem exigir autenticação institucional para acesso, pois pertencem ao ambiente acadêmico da faculdade.
+A arquitetura foi organizada em camadas:
 
----
-
-## 🌐 Deploy
-
-O backend foi implantado no Google Cloud Run, permitindo acesso externo e escalabilidade.
-
----
-
-## 📌 Considerações Finais
-
-Este projeto demonstra a aplicação prática de IA generativa na educação, com foco na personalização do aprendizado e integração com ambientes virtuais de ensino.
-
-Como evolução futura, o sistema pode incorporar mecanismos de recuperação dinâmica de conteúdo (RAG) a partir de repositórios institucionais.
-
----
-## 🔗 Demonstração
-
-Frontend: (https://sites.google.com/d/1Yr-3pKiHs1X-wDjd6_gnld37pfD1IeMu/p/1J6UD8E4SPZY6UcrAeKF59VUC4RdN2krx/edit) 
-Backend: https://gem-tutor-backend-20855190353.us-central1.run.app
-
----
-## 🧠 Arquitetura
-
-Usuário → Interface Web → Cloud Run → Vertex AI → Resposta
+```text
+Google Sites
+   ↓
+GitHub Pages
+   ↓
+Google Cloud Run
+   ↓
+Vertex AI / Gemini
+   ↓
+Resposta ao usuário

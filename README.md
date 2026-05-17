@@ -49,7 +49,7 @@ Google Cloud Run
 Vertex AI / Gemini
    ↓
 Resposta ao usuário
-
+```
 ---
 
 ## 4. Por que há um backend no Cloud Run?
